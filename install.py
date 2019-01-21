@@ -3,14 +3,31 @@
 import subprocess
 import os
 import tkinter
+from tkinter import scrolledtext
 
 print("This script will get your Kali linux installation up to speed")
 
+
+
+###############################Experimental Code#######################################
+
+
 firstWindow = tkinter.Tk()
+firstWindow.title("Experimental Framework Installer")
+ScrolledText = scrolledtext.ScrolledText(firstWindow, width=70, height=27)
+ScrolledText.grid(column=5, row=4)
+f = open("text.txt", "r")
+fo = f.readlines()
+ScrolledText.insert(tkinter.INSERT, fo)
+firstLabel = tkinter.Label(firstWindow, text="Experimental GUI", font=("Calibri", 10))
+
+firstWindow.geometry('1500x1000')
+firstLabel.grid(column=0, row=0)
+
 
 firstWindow.mainloop()
-tkinter.Tcl(baseName="Testing",className='tk', useTk=1)
 
+###################################################################################################
 
 print("")
 print("[+] Performing update, upgrade, full upgrade and distribution upgrade")
@@ -32,9 +49,9 @@ class cd:
 def install_beelogger():
     with cd("~/"):
         print("[-] Installing BeeLogger in your root directory")
-        subprocess.call("git clone https://github.com/4w4k3/BeeLogger.git", shell=True)
+        subprocess.call("git clone https://github.com/4w4k3/BeeLogger.git >> test.txt", shell=True)
         with cd("BeeLogger/"):
-            subprocess.call("./install.sh", shell=True)
+            subprocess.call("./install.sh >> test.txt", shell=True)
             print("[+] BeeLogger is now installed in root directory")
 
 
@@ -127,6 +144,10 @@ def setup_networkmanager():
     print("There is one more thing to do which is quite complicated but hopefully this gets everything up and running "
           "for your network")
     subprocess.call("clear", shell=True)
+
+def testing_function():
+    print("[+] Printing to the text output for the gui")
+    subprocess.call("ping google.com >> text.txt", shell=True)
 #
 
 # def setup_NetworkManager():
@@ -143,17 +164,18 @@ def setup_networkmanager():
 
 
 def main_function():
-    setup_networkmanager()
-    #setup_NetworkManager()
-    installing_and_setup_tor()
-    install_beelogger()
-    install_thefatrat()
-    install_empire()
-    install_lazagne()
-    install_veil_framework()
-    install_zlogger()
-    install_repository_tools()
-    subprocess.call("apt-get update && apt-get upgrade -y && apt-get full-upgrade -y && apt-get dist-upgrade -y", shell=True)
+#    setup_networkmanager()
+#    setup_NetworkManager()
+#    installing_and_setup_tor()
+#    install_beelogger()
+#    install_thefatrat()
+#    install_empire()
+#    install_lazagne()
+#    install_veil_framework()
+#    install_zlogger()
+#    install_repository_tools()
+#    subprocess.call("apt-get update && apt-get upgrade -y && apt-get full-upgrade -y && apt-get dist-upgrade -y", shell=True)
+     testing_function()
 
 
 main_function()
