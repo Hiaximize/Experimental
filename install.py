@@ -2,15 +2,13 @@
 
 
 # import statements used to write the program
-
-import subprocess
-import os
-import PySimpleGUI as pg
-
-
-# Intro message that displays at the beginning of execution
-message = "Experimental Program/Framework Installer"
-pg.Popup(message)
+try:
+    import subprocess
+    import os
+    import PySimpleGUI as pg
+    pg.Popup("[+] Libraries successfully imported")
+except:
+    pg.PopupError("[-] Could not import libraries")
 
 
 # The below code was a class discovered through research to easily traverse local directories
@@ -33,7 +31,7 @@ def install_beelogger():
         print("[-] Installing BeeLogger in your root directory")
         subprocess.call("git clone https://github.com/4w4k3/BeeLogger.git >> test.txt", shell=True)
         with cd("BeeLogger/"):
-            subprocess.call("./install.sh >> test.txt", shell=True)
+            subprocess.call("./install.sh", shell=True)
             print("[+] BeeLogger is now installed in root directory")
 
 
@@ -131,27 +129,27 @@ def install_repository_tools():
 # Below function is for program testing
 def testing_function():
     print("[+] Printing to the text output for the gui")
-    subprocess.call("ping -c 4 google.com", shell=True)
+    subprocess.call("ping -c 1 google.com", shell=True)
 
 
 # Below function is the main function for the program
 def main_function():
-#    testing_function()
-   installing_and_setup_tor()
-   install_beelogger
-   install_thefatrat()
-   install_empire()
-   install_lazagne()
-   install_veil_framework()
-   install_zlogger()
-   install_repository_tools()
-   subprocess.call("apt-get update && apt-get upgrade -y && apt-get full-upgrade -y && apt-get dist-upgrade -y", shell=True)
+    testing_function()
+#    installing_and_setup_tor()
+#    install_beelogger
+#    install_thefatrat()
+#    install_empire()
+#    install_lazagne()
+#    install_veil_framework()
+#    install_zlogger()
+#    install_repository_tools()
+#    subprocess.call("apt-get update && apt-get upgrade -y && apt-get full-upgrade -y && apt-get dist-upgrade -y", shell=True)
 
 
 ####################################################################################################################################
 ####################################################################################################################################
 ####################################################Code to be used later###########################################################
-# f = open("text.txt", "r")
+# f = open("log.txt", "r")
 # fo = f.readlines()
 #
 # layout = [
@@ -169,9 +167,9 @@ def main_function():
 #################################BELOW IS THE MAIN PROGRAM CALL/LOG CONTAINED WITHIN A TRY CATCH#####################################
 
 try:
-    log = "The following were completed successfully:\n" \
+    log = "\t     The following were completed successfully:\n\n\t   All programs were installed in the root directory\n\n" \
           "beelogger\n" \
-          "tor\n" \
+          "tor (download/configuration)\n" \
           "thefatrat\n" \
           "empire\n" \
           "lazagne\n" \
