@@ -5,7 +5,6 @@
 
 import subprocess
 import os
-import exitstatus
 import PySimpleGUI as pg
 
 
