@@ -108,7 +108,7 @@ def install_zlogger():
 # Below function will install a tool for downloading and setting up tor to tunnel your connection through the tor network for anonymization
 def installing_and_setup_tor():
     f = open("/etc/proxychains.conf", "a")
-    f.write("socks5  127.0.0.1 9050\n")
+    f.write("\nsocks5  127.0.0.1 9050\n")
     f.write("socks5  127.0.0.1 9050")
     f.close()
     subprocess.call("leafpad /etc/proxychains.conf", shell=True)
