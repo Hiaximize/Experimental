@@ -5,10 +5,10 @@
 try:
     import subprocess
     import os
-    import PySimpleGUI as pg
-    pg.Popup("[+] Libraries successfully imported")
+    import PySimpleGUI
+    PySimpleGUI.Popup("[+] Libraries successfully imported")
 except:
-    pg.PopupError("[-] Could not import libraries")
+    PySimpleGUI.PopupError("[-] Could not import libraries")
 
 
 # The below code was a class discovered through research to easily traverse local directories
@@ -178,7 +178,7 @@ try:
           "repository tools\n" \
           "full system upgrade (if available)"
     main_function()
-    pg.PopupScrolled(log, title="Results")
+    PySimpleGUI.PopupScrolled(log, title="Results")
 
 except:
-    pg.PopupError("Operation Not Successful")
+    PySimpleGUI.PopupError("Operation Not Successful")
