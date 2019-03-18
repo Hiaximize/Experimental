@@ -4,7 +4,6 @@
 # import statements used to write the program
 import subprocess
 import os
-import PySimpleGUI
 
 # The below code was a class discovered through research to easily traverse local directories
 class cd:
@@ -101,7 +100,7 @@ def install_zlogger():
 # Below function will install a tool for downloading and setting up tor to tunnel your connection through the tor network for anonymization
 def installing_and_setup_tor():
     f = open("/etc/proxychains.conf", "a")
-    f.write("\nsocks5  127.0.0.1 9050")
+    f.write("\nsocks5  127.0.0.1 9050\n")
     f.write("socks5  127.0.0.1 9050")
     f.close()
     subprocess.call("leafpad /etc/proxychains.conf", shell=True)
@@ -141,39 +140,5 @@ def main_function():
     subprocess.call("apt-get update && apt-get upgrade -y && apt-get full-upgrade -y && apt-get dist-upgrade -y", shell=True)
 
 
-####################################################################################################################################
-####################################################################################################################################
-####################################################Code to be used later###########################################################
-# f = open("log.txt", "r")
-# fo = f.readlines()
-#
-# layout = [
-#     [pg.Multiline(fo, size=(100, 30))],
-#     [pg.Text('_' * 100, size=(100, 1))],
-#     [pg.Text('')],
-#     [pg.OK('OK'), pg.Cancel(button_color=('blue', 'green')), pg.ProgressBar(max_value=10, size=(60, 3))]
-# ]
-#
-# event, values = pg.Window('Kali Linux Configuration Program', auto_size_text=True,
-#                           default_element_size=(40, 1)).Layout(layout).Read()
-
-#####################################################################################################################################
-#####################################################################################################################################
-#################################BELOW IS THE MAIN PROGRAM CALL/LOG CONTAINED WITHIN A TRY CATCH#####################################
-
-try:
-    log = "\t     The following were completed successfully:\n\n\t   All programs were installed in the root directory\n\n" \
-          "beelogger\n" \
-          "tor (download/configuration)\n" \
-          "thefatrat\n" \
-          "empire\n" \
-          "lazagne\n" \
-          "veil_framework\n" \
-          "zlogger\n" \
-          "repository tools\n" \
-          "full system upgrade (if available)"
-    main_function()
-    PySimpleGUI.PopupScrolled(log, title="Results")
-
-except:
-    PySimpleGUI.PopupError("Operation Not Successful")
+main_function()
+  
