@@ -2,14 +2,9 @@
 
 
 # import statements used to write the program
-try:
-    import subprocess
-    import os
-    import PySimpleGUI
-    PySimpleGUI.Popup("[+] Libraries successfully imported")
-except:
-    PySimpleGUI.PopupError("[-] Could not import libraries")
-
+import subprocess
+import os
+import PySimpleGUI
 
 # The below code was a class discovered through research to easily traverse local directories
 class cd:
@@ -106,7 +101,7 @@ def install_zlogger():
 # Below function will install a tool for downloading and setting up tor to tunnel your connection through the tor network for anonymization
 def installing_and_setup_tor():
     f = open("/etc/proxychains.conf", "a")
-    f.write("\nsocks5  127.0.0.1 9050\n")
+    f.write("\nsocks5  127.0.0.1 9050")
     f.write("socks5  127.0.0.1 9050")
     f.close()
     subprocess.call("leafpad /etc/proxychains.conf", shell=True)
@@ -134,16 +129,16 @@ def testing_function():
 
 # Below function is the main function for the program
 def main_function():
-    testing_function()
-#    installing_and_setup_tor()
-#    install_beelogger
-#    install_thefatrat()
-#    install_empire()
-#    install_lazagne()
-#    install_veil_framework()
-#    install_zlogger()
-#    install_repository_tools()
-#    subprocess.call("apt-get update && apt-get upgrade -y && apt-get full-upgrade -y && apt-get dist-upgrade -y", shell=True)
+#    testing_function()
+    installing_and_setup_tor()
+    install_beelogger
+    install_thefatrat()
+    install_empire()
+    install_lazagne()
+    install_veil_framework()
+    install_zlogger()
+    install_repository_tools()
+    subprocess.call("apt-get update && apt-get upgrade -y && apt-get full-upgrade -y && apt-get dist-upgrade -y", shell=True)
 
 
 ####################################################################################################################################
