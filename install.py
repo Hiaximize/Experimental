@@ -104,7 +104,7 @@ def installing_and_setup_tor():
     f.close()
     subprocess.call("leafpad /etc/proxychains.conf", shell=True)
     with cd("~/"):
-        subprocess.call("clear")
+        subprocess.call("clear", shell=True)
         print('')
         print("[-] Installing tor...")
         subprocess.call("apt-get install tor -y", shell=True)
