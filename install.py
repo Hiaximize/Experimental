@@ -64,9 +64,8 @@ def install_lazagne():
         print("[-] Installing LaZagne to root directory")
         print("")
         subprocess.call("git clone https://github.com/AlessandroZ/LaZagne.git", shell=True)
-        with cd("LaZagne/setup"):
-            print("")
-            print("[+] LaZagne is now installed in the root directory")
+        print("")
+        print("[+] LaZagne is now installed in the root directory")
 
 
 # Below function will install a tool for creating customizable malicious payloads that evade AV's.
