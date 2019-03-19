@@ -128,11 +128,11 @@ def testing_function():
 # Below function is the main function for the program
 def main_function():
 #    testing_function()
-#     installing_and_setup_tor()
-#     install_beelogger
-#     install_thefatrat()
-#     install_empire()
-#     install_lazagne()
+    installing_and_setup_tor()
+    install_beelogger
+    install_thefatrat()
+    install_empire()
+    install_lazagne()
     install_veil_framework()
     install_zlogger()
     install_repository_tools()
