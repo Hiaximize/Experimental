@@ -80,20 +80,7 @@ def install_veil_framework():
             subprocess.call("./setup.sh", shell=True)
             print("")
             print("[+] Veil-Framework is now installed in the root directory")
-
-
-# Below function will install a tool for creating key loggers
-def install_zlogger():
-    with cd("~/"):
-        print("")
-        print("[-] Installing Zlogger to root directory")
-        print("")
-        subprocess.call("git clone https://github.com/jlemon/zlogger.git", shell=True)
-        with cd("ZLogger/"):
-            subprocess.call("chmod +x install.sh", shell=True)
-            subprocess.call("./install.sh", shell=True)
-            print("")
-            print("[+] ZLogger is now installed in the root directory")
+            
 
 
 # Below function will install a tool for downloading and setting up tor to tunnel your connection through the tor network for anonymization
@@ -128,13 +115,12 @@ def testing_function():
 # Below function is the main function for the program
 def main_function():
 #    testing_function()
-#     installing_and_setup_tor()
-#     install_beelogger
-#     install_thefatrat()
-#     install_empire()
-#     install_lazagne()
-#     install_veil_framework()
-    install_zlogger()
+    installing_and_setup_tor()
+    install_beelogger
+    install_thefatrat()
+    install_empire()
+    install_lazagne()
+    install_veil_framework()
     install_repository_tools()
     subprocess.call("apt-get update && apt-get upgrade -y && apt-get full-upgrade -y && apt-get dist-upgrade -y", shell=True)
 
