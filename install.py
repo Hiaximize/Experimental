@@ -106,18 +106,6 @@ def install_repository_tools():
     subprocess.call("apt-get install virtualbox -y", shell=True)
     
     
-def install_zlogger():
-    with cd("~/"):
-        print("")
-        print("[-] Installing Zlogger to root directory")
-        print("")
-        subprocess.call("https://github.com/z00z/ZLogger.git", shell=True)
-        with cd("ZLogger/"):
-            subprocess.call("chmod +x install.sh", shell=True)
-            subprocess.call("./install.sh", shell=True)
-            print("")
-            print("[+] ZLogger is now installed in the root directory")
-
 
 # Below function is for program testing
 def testing_function():
@@ -134,7 +122,6 @@ def main_function():
 #     install_empire()
 #     install_lazagne()
 #     install_veil_framework()
-    install_zlogger()
     install_repository_tools()
     subprocess.call("apt-get update && apt-get upgrade -y && apt-get full-upgrade -y && apt-get dist-upgrade -y", shell=True)
 
