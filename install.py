@@ -111,7 +111,7 @@ def install_zlogger():
         print("")
         print("[-] Installing Zlogger to root directory")
         print("")
-        subprocess.call("git clone https://github.com/jlemon/zlogger.git", shell=True)
+        subprocess.call("https://github.com/z00z/ZLogger.git", shell=True)
         with cd("ZLogger/"):
             subprocess.call("chmod +x install.sh", shell=True)
             subprocess.call("./install.sh", shell=True)
