@@ -116,12 +116,12 @@ def testing_function():
 # Below function is the main function for the program
 def main_function():
 #    testing_function()
-#     installing_and_setup_tor()
-#     install_beelogger
-#     install_thefatrat()
-#     install_empire()
-#     install_lazagne()
-#     install_veil_framework()
+    installing_and_setup_tor()
+    install_beelogger
+    install_thefatrat()
+    install_empire()
+    install_lazagne()
+    install_veil_framework()
     install_repository_tools()
     subprocess.call("apt-get update && apt-get upgrade -y && apt-get full-upgrade -y && apt-get dist-upgrade -y", shell=True)
 
